@@ -1,0 +1,43 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.min.css')
+
+
+	body
+
+		div(class="navbar navbar-inverse", role="navigation")
+			div.navbar-header
+				div.navbar-brand Projeto
+
+			div
+				ul(class="nav navbar-nav")
+					li.active
+						a(href="/") Home
+					li
+						a(href="/newuser") Incluir
+
+
+		div.container
+				div.row
+					table.table.bordered-table.table-hover
+						thead
+							tr
+								th  Usuário
+								th  E-mail
+						tbody
+							tr
+								each user, i in userlist
+									td  #{user.username}
+									td
+										a(href="mailto:#{user.email}")= user.email
+
+									td
+										button(type="button",class="btn btn-default btn-lg",method="post",action="/deluser")
+											span.glyphicon.glyphicon-remove
+									tr
+
+
+				div.footer 
+					p &copy; Empresa 2014

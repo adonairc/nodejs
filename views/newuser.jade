@@ -1,0 +1,43 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.min.css')
+
+
+	body
+
+		div(class="navbar navbar-inverse", role="navigation")
+			div.navbar-header
+				div.navbar-brand Projeto
+
+			div
+				ul(class="nav navbar-nav")
+					li
+						a(href="/") Home
+					li.active
+						a(href="/newuser") Incluir
+
+		
+
+		
+		div.container
+			div.row
+				form(class="form-horizontal", role="form", name="adduser",method="post",action="/adduser")
+					h2 Adicionar usuário
+				
+					div.form-group
+						div.col-sm-5
+							input(class="form-control", type="text", placeholder="Usuário", name="username")
+					
+					div.form-group
+						div.col-sm-5
+							input(class="form-control",type="text", placeholder="E-mail", name="useremail")
+						
+					div.form-group
+						div.col-sm-2
+							button(class="btn btn-lg btn-primary btn-block",type="submit") Enviar
+
+
+			div.footer 
+						p &copy; Empresa 2014
